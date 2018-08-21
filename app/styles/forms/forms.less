@@ -1,0 +1,132 @@
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel],
+textarea,
+select {
+    border: none;
+    box-shadow: none;
+    font-size: @input-font-size;
+    font-family: @input-font-family;
+    font-weight: 300;
+    padding: 0 5px;
+    height: 40px;
+    width: 100%;
+}
+textarea {
+    height: 8.5em;
+    padding: 1em;
+    resize: none;
+    &::-webkit-input-placeholder {opacity: 0 !important;}
+    &:-moz-placeholder {opacity: 0 !important;}
+    &::-moz-placeholder {opacity: 0 !important;}
+    &:-ms-input-placeholder {opacity: 0 !important;}
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select::-ms-expand {display: none;}
+
+// ========================= Checkbox =========================
+input[type="checkbox"] {
+    position: absolute;
+    height: 0;
+    font-size: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 2em;
+    &:before, &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:before {
+        border: 1px solid @white;
+        border-radius: 3px;
+        width: 17px;
+        height: 17px;
+    }
+    &:after {
+        display: none;
+    }
+}
+
+input[type="checkbox"]:checked + label {
+    &:after {
+        border-bottom: 2px solid @white;
+        border-left: 2px solid @white;
+        display: block;
+        top: 4px;
+        left: 6px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+// ---------------------- Buttons -----------------------
+input[type=submit], button, .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: @btn-font-size;
+    font-family: @btn-font-family;
+    font-weight: 400;
+    letter-spacing: -.05em;
+    padding: @btn-padding;
+    height: @btn-height;
+    line-height: @btn-height;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+input[type=submit]:hover, button:hover, button:focus {
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    input[type=submit], button, .btn {
+        font-size: @btn-font-size-mobile;
+    }
+}
+
+// Button yellow
+.btn-yellow {
+    color: @black;
+    background-color: @yellow;
+    &:hover, &.active {
+        color: @black;
+        background-color: @yellow-light;
+    }
+}
+
+// Button blue
+.btn-blue {
+    color: @white;
+    background-color: @purple_1;
+    box-shadow: .41px .91px 4px 0 rgba(0,0,0,0.36);
+
+    &:hover, &.active {
+        color: @white;
+        background-color: @purple_2;
+    }
+}
+
+// Button purple
+.btn-purple {
+    color: @white;
+    background-color: @purple_2;
+    box-shadow: .41px .91px 4px 0 rgba(0,0,0,0.36);
+
+    &:hover, &.active {
+        color: @white;
+        background-color: @purple_1;
+    }
+}

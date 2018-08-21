@@ -1,0 +1,161 @@
+// ==================== COLORS =====================
+// White
+@white: #fff;
+@white_00: fade(@white, 00%); // rgba(225, 255, 255, 0);
+@white_10: fade(@white, 10%); // rgba(225, 255, 255, .1);
+@white_20: fade(@white, 20%); // rgba(225, 255, 255, .2);
+@white_30: fade(@white, 30%); // rgba(225, 255, 255, .3);
+@white_40: fade(@white, 40%); // rgba(225, 255, 255, .4);
+@white_50: fade(@white, 50%); // rgba(255, 255, 255, .5);
+@white_75: fade(@white, 75%); // rgba(225, 255, 255, .75)
+@white_80: fade(@white, 80%); // rgba(225, 255, 255, .8)
+
+// Black
+@black: #000;
+@black_00: fade(@black, 00%); // rgba(0, 0, 0, 0);
+@black_10: fade(@black, 10%); // rgba(0, 0, 0, .1);
+@black_20: fade(@black, 20%); // rgba(0, 0, 0, .2);
+@black_30: fade(@black, 30%); // rgba(0, 0, 0, .3);
+@black_50: fade(@black, 50%); // rgba(0, 0, 0, .5);
+@black_60: fade(@black, 60%); // rgba(0, 0, 0, .6);
+@black_70: fade(@black, 70%); // rgba(0, 0, 0, .7);
+@black_80: fade(@black, 80%); // rgba(0, 0, 0, .8);
+@black-light_07-5: lighten(@black, 7.5%); // #131313;
+@black-light_26-5: lighten(@black, 26.5%); // #444;
+@black-light_46-5: lighten(@black, 46.5%); // #777;
+@black-light_60: lighten(@black, 60%); // #999;
+@black-light_80: lighten(@black, 80%); // #ccc;
+@black-light_94-5: lighten(@black, 94.5%); // #f1f1f1;
+@black-light_95: lighten(@black, 95%); // #f2f2f2;
+@black-light_96-5: lighten(@black, 96.5%); // #f6f6f6;
+
+// Gray
+@gray: #323232;
+@gray-light: #999;
+@gray-lighter:#f7f7f7;
+@gray-dark: #414141;
+@gray-border: #c7c7c7;
+
+// Blue
+@blue: #0072bc;
+@blue-light: #00b7de;
+@blue-dark: #172a2c;
+@blue-darker: #10232e;
+
+// Purple
+@purple: #b68fc4;
+@purple_1: rgba(47, 64, 89, 1);
+@purple_2: rgba(77, 40, 86, 1);
+
+// Pink
+@pink: #ff9dfc;
+
+// Yellow
+@yellow: #ffe600;
+@yellow-light: #fcf07c;
+@yellow-border: rgba(217, 190, 150, 1);
+
+// Brown
+@brown: #cf9e55;
+
+// ==================== TEXT COLORS ====================
+@text-color-base: @gray-dark;
+
+// Link style
+@link-color: @blue;
+@link-color-hover: @blue-dark;
+@link-color-active: @blue-dark;
+
+// ==================== BACKGROUND ======================
+@bg-base: @white;
+@bg-header: @white;
+@bg-footer: @gray;
+
+// ==================== FONT FAMILY ===================
+@font-serif: serif;
+@font-sans-serif: sans-serif;
+@font-family-opensans: 'Open Sans', sans-serif;
+
+// ==================== FONT SIZE =======================
+// base
+@font-size-base: 10px;
+// font size
+@font-size12: 1.2em;
+@font-size14: 1.4em;
+@font-size15: 1.5em;
+@font-size16: 1.6em;
+@font-size17: 1.7em;
+@font-size18: 1.8em;
+@font-size19: 1.9em;
+@font-size20: 2em;
+@font-size22: 2.2em;
+@font-size24: 2.4em;
+@font-size25: 2.5em;
+@font-size26: 2.6em;
+@font-size28: 2.8em;
+@font-size30: 3em;
+@font-size32: 3.2em;
+@font-size35: 3.5em;
+@font-size36: 3.6em;
+@font-size38: 3.8em;
+@font-size43: 4.3em;
+@font-size45: 4.5em;
+@font-size56: 5.6em;
+@font-size60: 6em;
+@font-size70: 7em;
+@font-size80: 8em;
+@font-size93: 9.3em;
+@font-size215: 21.5em;
+@font-size230: 23em;
+// tags
+@font-size-h1: @font-size60; // H1
+@font-size-h2: @font-size36; // H2
+@font-size-h3: @font-size24; // H3
+@font-size-h4: @font-size20; // H4
+@font-size-p: @font-size18; // p
+//@font-size-select: @font-size24; // select
+
+@font-weight-base: normal;
+@line-height-base: 1.4;
+@letter-spacing-base: 0;
+
+// ==================== BORDERS =======================
+@border-color-base: @gray-border;
+@border-width-base: 1px;
+
+@border-style-solid: solid;
+@border-style-dotted: dotted;
+@border-style-dashed: dashed;
+
+@border-radius-base: 1em;
+@border-radius-half: 50%;
+
+@border-solid: @border-width-base @border-style-solid;
+@border-dotted: @border-width-base @border-style-dotted;
+@border-dashed: @border-width-base @border-style-dashed;
+
+@border-solid-base: @border-solid @border-color-base;
+
+// ==================== FORMS: Buttons =======================
+@btn-font-size: @font-size17;
+@btn-font-size-mobile: @font-size20;
+@btn-font-family: @font-family-opensans;
+@btn-padding: 0 1em;
+@btn-height: 35px;
+// Btn blue
+@btn-blue-bg: @blue;
+@btn-blue-bg-hover: @blue;
+// Btn transparent
+@btn-trans-border: 1px solid @white;
+@btn-trans-bg: @white;
+@btn-trans-color: @blue;
+// ==================== FORMS: Inputs =======================
+@input-font-size: @font-size18;
+@input-font-family: @font-family-opensans;
+@placeholder-color: @black_50;
+
+// ==================== HEADER =======================
+@header-bg: @bg-header;
+@header-height: 7.5em;
+
+// ==================== FOOTER =======================
