@@ -9,7 +9,7 @@ module.exports = function(paths) {
                         {
                             loader: "babel-loader",
                             options:{
-                                presets:["env", "react"]
+                                presets:["env", "es2015", "react", "stage-2"]
                             }
                         }
                     ]

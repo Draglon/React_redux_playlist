@@ -19,12 +19,10 @@ const initialState = {
 
 function playlist(state = initialState, action) {
     if(action.type === 'ADD_TRACK') {
-        return [...state,
-            {
-                tracks: [...state.tracks, action.payload],
-                playlists: [...state.playlists, action.payload],
-            }
-        ];
+        return {
+            ...state,
+            tracks: [...state.tracks, action.payload]
+        };
     }
     return state;
 }
