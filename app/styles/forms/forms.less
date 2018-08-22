@@ -4,7 +4,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select {
-    border: none;
+    border: 1px solid @black;
     box-shadow: none;
     font-size: @input-font-size;
     font-family: @input-font-family;
@@ -97,36 +97,22 @@ input[type=submit]:hover, button:hover, button:focus {
     }
 }
 
-// Button yellow
-.btn-yellow {
-    color: @black;
-    background-color: @yellow;
-    &:hover, &.active {
-        color: @black;
-        background-color: @yellow-light;
+.form {
+    width: 300px;
+    
+    &_field {
+        width: 50%;
+        float: left;
+    }
+
+    &_btns {
+        width: 50%;
+        float: left;
     }
 }
 
-// Button blue
-.btn-blue {
-    color: @white;
-    background-color: @purple_1;
-    box-shadow: .41px .91px 4px 0 rgba(0,0,0,0.36);
-
-    &:hover, &.active {
-        color: @white;
-        background-color: @purple_2;
-    }
-}
-
-// Button purple
-.btn-purple {
-    color: @white;
-    background-color: @purple_2;
-    box-shadow: .41px .91px 4px 0 rgba(0,0,0,0.36);
-
-    &:hover, &.active {
-        color: @white;
-        background-color: @purple_1;
-    }
+.list {
+    clear: both;
+    font-size: 2em;
+    padding: 1em;
 }
