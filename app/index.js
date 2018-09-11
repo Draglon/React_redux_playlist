@@ -5,29 +5,9 @@ import { createStore } from 'redux';
 
 import App from './js/App';
 import './styles/style.less';
+import reducer from './js/redusers'
 
-const initialState = {
-    tracks: [
-        "Smells like spirit",
-        "Enter Sandman"
-    ],
-    playlists: [
-        'My home playlist',
-        'My work playlist'
-    ]
-}
-
-function playlist(state = initialState, action) {
-    if(action.type === 'ADD_TRACK') {
-        return {
-            ...state,
-            tracks: [...state.tracks, action.payload]
-        };
-    }
-    return state;
-}
-
-const store = createStore(playlist);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
 
 ReactDOM.render(
     <Provider store={store}>
