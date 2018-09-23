@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { getTracks } from './actions/tracks';
+
 class App extends Component {
     addTrack() {
         this.props.onAddTrack(this.trackInput.value);
         this.trackInput.value = '';
+    }
+
+    findTrack() {
+        console.log('findTrack');
+        this.props.onFindTrack(this.searchInput.value);
     }
 
     render() {
@@ -13,17 +20,30 @@ class App extends Component {
         return(
             <div>
                 <div className="form">
-                    <div className="form_field">
-                        <input type="text" className="" ref={(input) => { this.trackInput = input }}/>
+                    <div className="clearfix">
+                        <div className="form_field">
+                            <input type="text" className="" ref={(input) => { this.trackInput = input }} />
+                        </div>
+                        <div className="form_btns">
+                            <button className="" onClick={this.addTrack.bind(this)}>Add Track</button>
+                        </div>
                     </div>
-                    <div className="form_btns">
-                        <button className="" onClick={this.addTrack.bind(this)}>Add Track</button>
+                    <div className="clearfix">
+                        <div className="form_field">
+                            <input type="text" className="" ref={(input) => { this.searchInput = input }} />
+                        </div>
+                        <div className="form_btns">
+                            <button className="" onClick={this.findTrack.bind(this)}>Find track</button>
+                        </div>
+                    </div>
+                    <div className="clearfix">
+                        <button onClick={this.props.onGetTracks}>Get tracks</button>
                     </div>
                 </div>
 
                 <ul className="list">
                     {this.props.tracks.map( (track, index) => 
-                        <li className="" key={index}>{track}</li>
+                        <li className="" key={index}>{track.name}</li>
                     )}
                 </ul>
             </div>
@@ -33,12 +53,22 @@ class App extends Component {
 
 export default connect(
     state => ({
-        tracks: state.tracks,
+        tracks: state.tracks.filter(track => track.name.includes(state.filterTracks)),
         playlists: state.playlists
     }),
     dispatch => ({
-        onAddTrack: (trackName) => {
-            dispatch({type: 'ADD_TRACK', payload: trackName })
+        onAddTrack: (name) => {
+            const payload = {
+                id: Date.now().toString(),
+                name
+            };
+            dispatch({type: 'ADD_TRACK', payload });
+        },
+        onFindTrack: (name) => {
+            dispatch({type: 'FIND_TRACK', payload: name});
+        },
+        onGetTracks: () => {
+            dispatch(getTracks());
         }
     })
 )(App);

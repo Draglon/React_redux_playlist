@@ -1,7 +1,4 @@
-const initialState = [
-    "Smells like spirit",
-    "Enter Sandman"
-]
+const initialState = [];
 
 export default function playlist(state = initialState, action) {
     if(action.type === 'ADD_TRACK') {
@@ -9,8 +6,8 @@ export default function playlist(state = initialState, action) {
             ...state,
             action.payload
         ];
-    } else if (action.type === 'DELETE_TRACK') {
-        return state;
+    } else if (action.type === 'FETCH_TRACKS_SUCCESS') {
+        return action.payload;
     }
     return state;
 }

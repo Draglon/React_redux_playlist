@@ -98,6 +98,8 @@ input[type=submit]:hover, button:hover, button:focus {
 }
 
 .form {
+    overflow: hidden;
+    margin: 0 auto;
     width: 300px;
     
     &_field {
@@ -115,4 +117,13 @@ input[type=submit]:hover, button:hover, button:focus {
     clear: both;
     font-size: 2em;
     padding: 1em;
+}
+
+.clearfix {
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+        width:100%;
+    }
 }
