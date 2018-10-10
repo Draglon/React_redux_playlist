@@ -21,14 +21,13 @@ history.listen(location => analyticsService.track(location.pathname));
 
 const navigation = (
     <Provider store={store} >
-      <Router history={history}>
-          <Switch>
+        <Router history={history}>
+            <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/about" component={About} />
                 {/* <Route component={NotFound} /> */}
-                
-          </Switch>
-      </Router>
+            </Switch>
+        </Router>
     </Provider>
 );
 
